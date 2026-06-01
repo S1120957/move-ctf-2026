@@ -1,0 +1,10 @@
+[package]
+name = "vulnerable_account"
+edition = "2024"
+
+[dependencies]
+Iota = { git = "https://github.com/iotaledger/iota.git", subdir = "crates/iota-framework/packages/iota-framework", rev = "framework/devnet" }
+public_key_authentication = { local = "../../../lib/public_key_authentication" }
+
+[addresses]
+vulnerable_account = "0x0"

@@ -1,0 +1,9 @@
+[package]
+name = "mint_master"
+edition = "2024"
+
+[dependencies]
+Iota = { git = "https://github.com/iotaledger/iota.git", subdir = "crates/iota-framework/packages/iota-framework", rev = "framework/devnet" }
+
+[addresses]
+mint_master = "0x0"

@@ -1,0 +1,12 @@
+[package]
+name = "checkpoint"
+edition = "2024"
+
+# The IOTA framework is fetched from a pinned git revision so this package builds
+# with no monorepo checkout. `framework/devnet` tracks the framework deployed on
+# devnet. For a fully reproducible pin, swap the branch for a 40-char commit hash.
+[dependencies]
+Iota = { git = "https://github.com/iotaledger/iota.git", subdir = "crates/iota-framework/packages/iota-framework", rev = "framework/devnet" }
+
+[addresses]
+checkpoint = "0x0"

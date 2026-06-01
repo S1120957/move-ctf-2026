@@ -1,0 +1,9 @@
+[package]
+name = "vault_guard"
+edition = "2024"
+
+[dependencies]
+Iota = { git = "https://github.com/iotaledger/iota.git", subdir = "crates/iota-framework/packages/iota-framework", rev = "framework/devnet" }
+
+[addresses]
+vault_guard = "0x0"

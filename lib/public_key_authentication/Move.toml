@@ -1,0 +1,12 @@
+[package]
+name = "public_key_authentication"
+edition = "2024"
+
+# Framework comes from a pinned git revision so this kit builds with no monorepo
+# checkout present. `framework/devnet` tracks the framework currently deployed on
+# devnet. To pin reproducibly, replace the branch with a 40-char commit hash.
+[dependencies]
+Iota = { git = "https://github.com/iotaledger/iota.git", subdir = "crates/iota-framework/packages/iota-framework", rev = "framework/devnet" }
+
+[addresses]
+public_key_authentication = "0x0"

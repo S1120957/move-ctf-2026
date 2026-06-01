@@ -1,0 +1,21 @@
+# Instructor-only material: complete answers and solve walkthroughs. Keeping this
+# out of the repo lets you publish the challenges publicly without spoiling them.
+solutions/
+
+# Move build artifacts
+build/
+
+# Move dependency lock (re-resolved on build; avoids "lock out of date" churn
+# when the pinned framework branch advances). Pin a commit in Move.toml if you
+# need fully reproducible builds and want to commit the lock instead.
+Move.lock
+
+# macOS
+.DS_Store
+
+# Auto-generated agent context stubs (not part of the kit)
+CLAUDE.md
+
+# Local workshop scratch (deployed ids, signatures, env exports)
+.workshop.env
+*.local
