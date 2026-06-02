@@ -56,5 +56,11 @@ public entry fun get_flag(ctx: &mut TxContext) {
     //
     // Hint: `event` is already imported above; `object` and `transfer` come
     // from the framework and are always in scope.
-    abort ENotImplemented
+
+	let student = ctx.sender();
+	let flag = Flag { id: object::new(ctx), student };
+	event::emit(FlagCaptured { flag_id: object::id(&flag), student });
+	transfer::public_transfer(flag, student);
+    
+
 }
