@@ -71,7 +71,9 @@ public fun turn(vault: &mut Vault, clicks: u64) {
     //   2. Increment `vault.attempts` by 1.
     //   3. Add `clicks` to `vault.dial`.
     // Then delete the abort below.
-    abort ENotImplemented
+    assert!(vault.attempts < MAX_ATTEMPTS, ETooManyAttempts);
+    vault.attempts = vault.attempts + 1;
+    vault.dial = vault.dial + clicks;
 }
 
 /// Capture the flag — but only if the dial reads exactly `TARGET`.
@@ -80,8 +82,9 @@ public entry fun get_flag(vault: &mut Vault, ctx: &mut TxContext) {
     //   1. abort with `EWrongCombination` unless `vault.dial == TARGET`.
     //   2. call `award_flag(ctx)` to mint and send the flag.
     // Then delete the abort below.
-    let _ = vault;
-    abort ENotImplemented
+    // let _ = vault;
+    assert!(vault.dial == TARGET, EWrongCombination);
+    award_flag(ctx);
 }
 
 // === Helpers (given) ===
